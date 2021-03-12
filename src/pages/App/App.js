@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 import CountryInfo from '../../component/CountryInfo';
-import Modal from '../../component/Modal/Modal'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Modal, Button, Form } from "react-bootstrap";
 
 class App extends React.Component {
   state = {
@@ -70,21 +71,33 @@ class App extends React.Component {
 
     console.log("inside render");
     console.log(cname);
-    return (<div>
-      <Modal show={this.state.show} handleClose={this.hideModal}>
-        <h2 className="modalheading">Know Before You Go!</h2>
-        <p>Get information about countries via a RESTful API. This API gets information about countries such as name, capital, region, sub-region, currency and flag. Remember to enter the full name of the country you want to get the information about! If you are interested to find more about this API then please visit https://restcountries.eu/rest/v2/
-        </p>
+    return (
+      <div>
+      <h1>Know Before You Go!!
+        <Button variant="info" onClick={this.showModal}>About App</Button>
+      </h1>
+      <Modal show={this.state.show} handleClose={this.hideModal} backdrop="static" keyboard={false} >
+        <Modal.Header>
+        <Modal.Title>Know Before You Go!</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Get information about countries via a RESTful API.
+          This API gets information about countries such as name, capital, region, sub-region, currency and flag.
+          Remember to enter the full name of the country you want to get the information about!
+          If you are interested to find more about this API then please visit https://restcountries.eu/rest/v2/
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="danger" onClick={this.hideModal}>Close</Button>
+        </Modal.Footer>
       </Modal>
-      <h1>Know Before You Go!!<input className="submitbutton0" type='submit' value=' About App! ' onClick={this.showModal}/></h1>
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor='country'>Country Name 
-        </label>
-        <input className="textbox" id='countryName' type='text' value={this.state.countryName} onChange={this.handleChange}/><br/>
 
-        <input className="submitbutton1" type='submit' value='Click Here!'/>
-        <input className="submitbutton2" type='submit' value='    Reset    ' onClick={() => this.reset()}/>
-      </form>
+      <Form  onSubmit={this.handleSubmit}>
+        <div><Form.Label htmlFor='country'>Country Name</Form.Label>
+          <input id='countryName' type='text' value={this.state.countryName} onChange={this.handleChange}/>
+          <input className="btn btn-primary" type='submit' value="Click Here"/>
+          <input className="btn btn-danger" type='submit' value="Reset" onClick={() => this.reset()}/>
+          </div>
+      </Form>
       <CountryInfo cname={cname} capital={capital} reg={region} subreg={subreg} lang={lang} curr={currency} flag={flag}/>
     </div>)
   }
