@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import CountryInfo from '../../component/CountryInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Modal, Button, Form } from "react-bootstrap";
+import { Modal, Button, Form, Container } from "react-bootstrap";
+import InputGroup from 'react-bootstrap/InputGroup'
 
 class App extends React.Component {
   state = {
@@ -97,13 +98,13 @@ class App extends React.Component {
       <Form  onSubmit={this.handleSubmit}>
         <div className="row">
         <div className="col-lg-3 center-block">
-      <div className="input-group">
-        <input type="text" className="input-sm"  id="countryName" value={this.state.countryName} onChange={this.handleChange} placeholder="Country Name"/>
+      <Container>
+      <Form.Control size="sm" name="foo" placeholder="Country Name" id="countryName" value={this.state.countryName} onChange={this.handleChange} style={{ fontSize: 18, padding: 3 }} />
         <span className="input-group-btn">
           <Button variant="btn btn-primary" type='submit'>Click Here</Button>
           <Button variant="btn btn-danger" type='submit' onClick={() => this.reset()}>Reset</Button>
         </span>
-     </div>
+      </Container>
    </div>
  </div>
 
