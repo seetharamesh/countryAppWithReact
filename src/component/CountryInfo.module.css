@@ -1,7 +1,6 @@
 
-/*This css is not used as we implemented bootstrap*/
-.cnc{
-  margin-left: 39.5%;
-  color:rgb(58, 6, 98);
-  text-align: left;
+/*not used currently*/
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }

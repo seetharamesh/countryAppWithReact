@@ -97,7 +97,7 @@ class App extends React.Component {
 
       <Form  onSubmit={this.handleSubmit}>
         <div className="row">
-        <div className="col-lg-3 center-block">
+        <div className="col-md-2 col-md-offset-5">
           <Form.Control size="sm" placeholder="Country Name" id="countryName" value={this.state.countryName} onChange={this.handleChange} style={{ fontSize: 18, padding: 3 }} />
         <span className="input-group-btn">
           <Button variant="btn btn-primary" type='submit'>Click Here</Button>
