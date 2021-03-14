@@ -1,10 +1,9 @@
 import React from 'react';
-import styles from './CountryInfo.module.css';
+//import styles from './CountryInfo.module.css';
 import { Form,Container } from "react-bootstrap";
 /*This class will output the country details with the props passed from its parent - App */
 class CountryInfo extends React.Component {
     render() {
-      const styleslabel = {color:'rgb(179, 20, 20)'}
       console.log("inside countryinfo");
         return (
           <div>
@@ -17,7 +16,7 @@ class CountryInfo extends React.Component {
                     <h4><Form.Label  className="formLabel">Subregion:</Form.Label>{this.props.subreg}</h4>
                     <h4><Form.Label  className="formLabel">Language:</Form.Label>{this.props.lang}</h4>
                     <h4><Form.Label  className="formLabel">Currency:</Form.Label>{this.props.curr}</h4>
-                   {(this.props.flag != "") ? <img src={this.props.flag} alt="new"  width="200" height="75"/> : null }
+                   {(this.props.flag != "") ? <img src={this.props.flag} alt="new"  width="150" height="75"/> : null }
               </div>
             </div>
               </Form>
