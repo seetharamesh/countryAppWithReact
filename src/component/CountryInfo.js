@@ -9,7 +9,7 @@ class CountryInfo extends React.Component {
           <div>
               <Form>
                 <div className="row">
-                <div className="col-md-2 col-md-offset-5">
+                <div className="col-md-4 col-md-offset-4">
                     <h4><Form.Label  className="formLabel">Country:</Form.Label>{this.props.cname}</h4>
                     <h4><Form.Label  className="formLabel">Capital:</Form.Label>{this.props.capital}</h4>
                     <h4><Form.Label  className="formLabel">Region:</Form.Label>{this.props.reg}</h4>
