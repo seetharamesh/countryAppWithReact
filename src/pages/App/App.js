@@ -44,7 +44,9 @@ class App extends React.Component {
 
   //the showModal and hideModal methods are called to show and hide modals
   showModal = () => {
-    this.setState({show: true})
+    console.log("inside showModal");
+    this.setState({show: true});
+    console.log(this.state.show);
   };
 
   hideModal = () => {
@@ -59,7 +61,8 @@ class App extends React.Component {
 
   //the render function first renders the modal component on a button click. The App.js is where we will display our modal.
   //We set the state of the modal to show or hide.
-
+  // you would notice in Modal that i had included animation={false} because the modal was not popping
+  //out. This was recommended in stackoverflow https://stackoverflow.com/questions/41795987/react-bootstrap-modal-not-showing
   render() {
     const cname = (this.state.country.map(cname => (cname.name)));
     const capital = (this.state.country.map(capital => (capital.capital)));
@@ -76,7 +79,7 @@ class App extends React.Component {
       <h1>Know Before You Go!!
         <Button variant="info" onClick={this.showModal}>About App</Button>
       </h1>
-      <Modal show={this.state.show} handleClose={this.hideModal} backdrop="static" keyboard={false} >
+      <Modal animation={false} show={this.state.show} onHide={this.hideModal} >
         <Modal.Header>
         <Modal.Title>Know Before You Go!</Modal.Title>
         </Modal.Header>
@@ -92,14 +95,21 @@ class App extends React.Component {
       </Modal>
 
       <Form  onSubmit={this.handleSubmit}>
-        <div><Form.Label htmlFor='country'>Country Name</Form.Label>
-          <input id='countryName' type='text' value={this.state.countryName} onChange={this.handleChange}/>
-          <input className="btn btn-primary" type='submit' value="Click Here"/>
-          <input className="btn btn-danger" type='submit' value="Reset" onClick={() => this.reset()}/>
-          </div>
+        <div className="row">
+        <div className="col-lg-3 center-block">
+      <div className="input-group">
+        <input type="text" className="input-sm"  id="countryName" value={this.state.countryName} onChange={this.handleChange} placeholder="Country Name"/>
+        <span className="input-group-btn">
+          <Button variant="btn btn-primary" type='submit'>Click Here</Button>
+          <Button variant="btn btn-danger" type='submit' onClick={() => this.reset()}>Reset</Button>
+        </span>
+     </div>
+   </div>
+ </div>
+
       </Form>
       <CountryInfo cname={cname} capital={capital} reg={region} subreg={subreg} lang={lang} curr={currency} flag={flag}/>
-    </div>)
+      </div>)
   }
 }
 

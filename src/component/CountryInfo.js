@@ -14,7 +14,7 @@ class CountryInfo extends React.Component {
                 <h3><span style={styleslabel}>Subregion: </span>{this.props.subreg}</h3>
                 <h3><span style={styleslabel}>Language: </span>{this.props.lang}</h3>
                 <h3><span style={styleslabel}>Currency: </span>{this.props.curr}</h3>
-                {(this.props.flag != "") ? <img src={this.props.flag} alt="new" width="400" height="150"/> : null }
+                {(this.props.flag != "") ? <img src={this.props.flag} alt="new"  width="200" height="75"/> : null }
             </div>
             </div>
         )

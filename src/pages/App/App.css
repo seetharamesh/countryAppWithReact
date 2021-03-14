@@ -8,13 +8,5 @@ html{
 h1 {
   padding: 40px 0 40px;
   text-align: center;
-  font-family: 'Pacifico', cursive;
   color: rgb(58, 6, 98);
-}
-
-label {
-  padding-left: 32%;
-  color: rgb(179, 20, 20);
-  font-weight: bold;
-  font-size: 20px;
 }

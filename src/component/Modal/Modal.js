@@ -1,3 +1,5 @@
+/*This component and associated css is not used as we have implemented bootstrap*/
+
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
 import './Modal.css';
@@ -12,6 +14,7 @@ The variable showHideClassName assigns its value a conditional to check if the v
 If so, the modal will appear. Else, the modal will hide. The properties display-block and display-none to
 show and hide the modal are handled through the modal.css file imported into your Modal component.*/
 const Modal = ({ handleClose, show, children }) => {
+  console.log("Inside Modal component");
   const showHideClassName = show ? "modal display-block" : "modal display-none";
 
   return (
