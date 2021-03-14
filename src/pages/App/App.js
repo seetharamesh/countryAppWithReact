@@ -98,18 +98,16 @@ class App extends React.Component {
       <Form  onSubmit={this.handleSubmit}>
         <div className="row">
         <div className="col-lg-3 center-block">
-      <Container>
-      <Form.Control size="sm" name="foo" placeholder="Country Name" id="countryName" value={this.state.countryName} onChange={this.handleChange} style={{ fontSize: 18, padding: 3 }} />
+          <Form.Control size="sm" placeholder="Country Name" id="countryName" value={this.state.countryName} onChange={this.handleChange} style={{ fontSize: 18, padding: 3 }} />
         <span className="input-group-btn">
           <Button variant="btn btn-primary" type='submit'>Click Here</Button>
           <Button variant="btn btn-danger" type='submit' onClick={() => this.reset()}>Reset</Button>
         </span>
-      </Container>
    </div>
  </div>
+ <CountryInfo cname={cname} capital={capital} reg={region} subreg={subreg} lang={lang} curr={currency} flag={flag}/>
 
       </Form>
-      <CountryInfo cname={cname} capital={capital} reg={region} subreg={subreg} lang={lang} curr={currency} flag={flag}/>
       </div>)
   }
 }
