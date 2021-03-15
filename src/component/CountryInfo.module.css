@@ -1,6 +1,8 @@
-
-/*not used currently*/
-.col-centered{
-    float: none;
-    margin: 0 auto;
+form label{
+  color: rgb(58, 6, 98);
+  font-weight:bold;
+}
+h4{
+  color:#dc3545;
+  font-weight:bold;
 }

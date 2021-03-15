@@ -96,17 +96,14 @@ class App extends React.Component {
       </Modal>
 
       <Form  onSubmit={this.handleSubmit}>
-        <div className="row">
+        <Form.Row className="align-items-center">
         <div className="col-md-4 col-md-offset-4">
           <Form.Control size="sm" placeholder="Country Name" id="countryName" value={this.state.countryName} onChange={this.handleChange} style={{ fontSize: 18, padding: 3 }} />
-        <span className="input-group-btn">
           <Button variant="btn btn-primary" type='submit'>Click Here</Button>
           <Button variant="btn btn-danger" type='submit' onClick={() => this.reset()}>Reset</Button>
-        </span>
-   </div>
- </div>
- <CountryInfo cname={cname} capital={capital} reg={region} subreg={subreg} lang={lang} curr={currency} flag={flag}/>
-
+        </div>
+        </Form.Row>
+        <CountryInfo cname={cname} capital={capital} reg={region} subreg={subreg} lang={lang} curr={currency} flag={flag}/>
       </Form>
       </div>)
   }

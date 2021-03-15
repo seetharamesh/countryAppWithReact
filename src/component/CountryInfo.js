@@ -1,5 +1,5 @@
 import React from 'react';
-//import styles from './CountryInfo.module.css';
+import styles from './CountryInfo.module.css';
 import { Form,Container } from "react-bootstrap";
 /*This class will output the country details with the props passed from its parent - App */
 class CountryInfo extends React.Component {
